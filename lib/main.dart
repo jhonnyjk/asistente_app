@@ -9,15 +9,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: AppTheme(selectedColor: 2).theme(),
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme(selectedColor: 1).theme(),
       title: 'Asistente app',
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Asistente app'),
         ),
-        body:  Center(
-          child: FilledButton.tonal(onPressed: () {
-          }, child: Text("Iniciar chat")),
+        body: Center(
+          child:
+              FilledButton.tonal(onPressed: () {}, child: Text("Iniciar chat")),
         ),
       ),
     );
