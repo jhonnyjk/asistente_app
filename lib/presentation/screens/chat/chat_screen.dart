@@ -1,3 +1,4 @@
+import 'package:asistente_app/presentation/widgets/chat/my_message_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 
@@ -39,19 +40,13 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
-                itemCount: 5,
+                itemCount: 100,
                 itemBuilder: (context, index) {
-                  return BubbleSpecialThree(
-                    isSender: true,
-                    text: 'Added iMessage shape bubbles',
-                    color: Color(0xFF1B97F3),
-                    tail: false,
-                    textStyle: TextStyle(color: Colors.white, fontSize: 16),
-                  );
+                  return const MyMessageBubble();
                 },
               ),
             ),
-            Text('Hola'),
+            const Text('Hola'),
           ],
         ),
       ),
