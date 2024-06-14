@@ -1,6 +1,7 @@
+import 'package:asistente_app/presentation/widgets/chat/her_message_bubble.dart';
 import 'package:asistente_app/presentation/widgets/chat/my_message_bubble.dart';
+import 'package:asistente_app/presentation/widgets/shared/message_field_box.dart';
 import 'package:flutter/material.dart';
-import 'package:chat_bubbles/chat_bubbles.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -17,7 +18,7 @@ class ChatScreen extends StatelessWidget {
           ),
         ),
         centerTitle: false,
-        title: const Text('Usuario'),
+        title: const Text('Bot logistico'),
       ),
       body: const _ChatView(),
     );
@@ -40,13 +41,15 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
-                itemCount: 100,
+                itemCount: 10,
                 itemBuilder: (context, index) {
-                  return const MyMessageBubble();
+                  return (index % 2 == 0)
+                      ? HerMessageBubble()
+                      : MyMessageBubble();
                 },
               ),
             ),
-            const Text('Hola'),
+            MessageFieldBox(),
           ],
         ),
       ),
