@@ -41,7 +41,7 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: 3,
                 itemBuilder: (context, index) {
                   return (index % 2 == 0)
                       ? HerMessageBubble()

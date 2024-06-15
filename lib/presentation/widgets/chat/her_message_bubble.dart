@@ -37,12 +37,11 @@ class _ImageBubble extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network(
-        "https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif",
+      child: Container(
+        color: Colors.amber,
         width: size.width * 0.7,
         height: 150,
-        fit: BoxFit.cover,
-        loadingBuilder: (context, child, loadingProgress) {
+        /*loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) return child;
           return Container(
             width: size.width * 0.7,
@@ -52,7 +51,7 @@ class _ImageBubble extends StatelessWidget {
               child: CircularProgressIndicator(),
             ),
           );
-        },
+        },*/
       ),
     );
   }
