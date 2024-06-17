@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 class MessageFieldBox extends StatelessWidget {
   const MessageFieldBox({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     final TextEditingController textController = TextEditingController();
-    final focusNode = FocusNode();
+    final focusNode = FocusNode(
+
+    );
 
     final outlineInputBorder = UnderlineInputBorder(
-      borderRadius: BorderRadius.circular(25),
+      borderRadius: BorderRadius.circular(18),
+      borderSide: BorderSide.none
     );
 
     final inputDecoration = InputDecoration(
@@ -26,12 +30,8 @@ class MessageFieldBox extends StatelessWidget {
     );
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.all(8.0),
       child: TextFormField(
-        onTapOutside: (event) {
-          focusNode.unfocus();
-        },
-        focusNode: focusNode,
         controller: textController,
         decoration: inputDecoration,
         onFieldSubmitted: (value) {
