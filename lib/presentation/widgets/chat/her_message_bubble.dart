@@ -41,7 +41,9 @@ class _ImageBubble extends StatelessWidget {
         color: Colors.amber,
         width: size.width * 0.7,
         height: 150,
-        /*loadingBuilder: (context, child, loadingProgress) {
+        // Implementacion en el caso que se necesite usar imagen, de momento el modelo
+        // funcion con imagenes, solo con texto
+        /* loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) return child;
           return Container(
             width: size.width * 0.7,
@@ -51,7 +53,7 @@ class _ImageBubble extends StatelessWidget {
               child: CircularProgressIndicator(),
             ),
           );
-        },*/
+        }, */
       ),
     );
   }
